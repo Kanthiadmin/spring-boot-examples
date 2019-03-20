@@ -24,9 +24,10 @@ public class PersonDao extends BaseDao {
 		return this.queryforOptional(sql, new Object[] { id }, personRowMapper);
 	}
 
-	public boolean updatePerson(String id, Person person) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean updatePerson(Person person) {
+		String sql = "update Person set age=? and mobileno=? and name=? where id=?";
+		return this.getJdbcTemplate().update(sql, person.getAge(), person.getMobileno(), person.getName(),
+				person.getId()) > 0;
 	}
 
 	public boolean insertPerson(Person person) {

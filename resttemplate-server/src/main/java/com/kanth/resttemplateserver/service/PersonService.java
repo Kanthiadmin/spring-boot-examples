@@ -20,7 +20,7 @@ public interface PersonService {
 	 */
 	public Optional<Person> getPersonDetail(String id);
 
-	public boolean updatePerson(String id, Person person);
+	public boolean updatePerson(Person person);
 
 	public boolean insertPerson(Person person);
 

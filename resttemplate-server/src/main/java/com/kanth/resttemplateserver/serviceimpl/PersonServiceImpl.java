@@ -27,9 +27,8 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	@Override
-	public boolean updatePerson(String id, Person person) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean updatePerson(Person person) {
+		return persondao.updatePerson(person);
 	}
 
 	@Override
