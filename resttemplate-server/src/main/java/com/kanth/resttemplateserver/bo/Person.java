@@ -1,7 +1,6 @@
 package com.kanth.resttemplateserver.bo;
 
 public class Person {
-
 	private String id;
 	private String name;
 	private Long mobileno;

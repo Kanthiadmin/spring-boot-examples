@@ -1,18 +1,27 @@
 package com.kanth.resttemplateserver.dao;
 
 import java.util.List;
+import java.util.Optional;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import com.kanth.resttemplateserver.bo.Person;
 
-public class PersonDao {
+@Repository
+public class PersonDao extends BaseDao {
+
+	private RowMapper<Person> personRowMapper = new BeanPropertyRowMapper<>(Person.class);
 
 	public List<Person> getAllPersonList() {
-		return null;
+		String sql = "select * from Person";
+		return this.getJdbcTemplate().query(sql, personRowMapper);
 	}
 
-	public Person getPersonDetail(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Person> getPersonDetail(String id) {
+		String sql = "select * from Person where id=?";
+		return this.queryforOptional(sql, new Object[] { id }, personRowMapper);
 	}
 
 	public boolean updatePerson(String id, Person person) {
