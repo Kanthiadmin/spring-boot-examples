@@ -1,10 +1,14 @@
 package com.kanth.resttemplateserver.bo;
 
+import javax.persistence.Id;
+
 public class Person {
+	
+	@Id
 	private String id;
 	private String name;
 	private Long mobileno;
-	private int age;
+	private Integer age;
 
 	public String getId() {
 		return id;
@@ -30,7 +34,7 @@ public class Person {
 		this.mobileno = mobileno;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 

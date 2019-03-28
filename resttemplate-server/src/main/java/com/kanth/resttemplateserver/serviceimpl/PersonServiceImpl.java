@@ -33,20 +33,17 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override
 	public boolean insertPerson(Person person) {
-		// TODO Auto-generated method stub
-		return false;
+		return persondao.insertPerson(person);
 	}
 
 	@Override
 	public boolean deletePerson(String id) {
-		// TODO Auto-generated method stub
-		return false;
+		return persondao.deletePerson(id);
 	}
 
 	@Override
-	public boolean changePersonDetails(Person person) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean changePersonDetails(Person person, String id) {
+		return persondao.changePersonDetails(person, id);
 	}
 
 }

@@ -26,6 +26,6 @@ public interface PersonService {
 
 	public boolean deletePerson(String id);
 
-	public boolean changePersonDetails(Person person);
+	public boolean changePersonDetails(Person person,String id);
 
 }
